@@ -1,0 +1,35 @@
+# INSTRUÇÕES PARA BAIXAR OS DADOS
+
+## 📥 Como Baixar o Arquivo CSV de Despesas
+
+1. **Acesse o portal oficial:**
+   https://www.camara.leg.br/cota-parlamentar/
+
+2. **Clique em "Arquivos de Dados"**
+
+3. **Escolha o ano desejado:**
+   - Ano-2023.csv (recomendado)
+   - Ano-2024.csv
+   - Ou outro ano disponível
+
+4. **Salve o arquivo nesta pasta (`dados/`)**
+
+5. **Execute a análise:**
+   ```powershell
+   .\venv\Scripts\python.exe src\main.py dados\Ano-2023.csv
+   ```
+
+## 📊 Formato Esperado do CSV
+
+O arquivo deve conter as seguintes colunas:
+- `txNomeParlamentar`: Nome do deputado
+- `txtDescricao`: Tipo da despesa
+- `vlrLiquido`: Valor líquido da despesa
+
+E outras colunas que serão automaticamente ignoradas pela análise.
+
+## ⚠️ Importante
+
+- O arquivo pode ser grande (100-200 MB)
+- Certifique-se de ter espaço em disco suficiente
+- O download pode demorar alguns minutos
