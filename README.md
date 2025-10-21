@@ -196,7 +196,7 @@ Contribuições são bem-vindas! Sinta-se à vontade para:
 
 ## 📞 Contato
 
-Para dúvidas ou sugestões, abra uma [Issue](https://github.com/thalesleall/analise-gastos-parlamentares/issues) no GitHub.
+Para dúvidas ou sugestões, abra uma [Issue](https://github.com/thalesleall/Analise-de-Gastos-Parlamentares/issues) no GitHub.
 
 ---
 
