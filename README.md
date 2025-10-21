@@ -38,7 +38,7 @@ Sistema automatizado de análise de dados governamentais que cruza informações
 
 1. **Clone o repositório**
 ```bash
-git clone https://github.com/thalesleall/analise-gastos-parlamentares.git
+git clone https://github.com/thalesleall/Analise-de-Gastos-Parlamentares.git
 cd analise-gastos-parlamentares
 ```
 
