@@ -27,7 +27,7 @@ Analisa automaticamente os gastos parlamentares cruzando dados de despesas com i
 
 1. **Clone o repositório**
 ```bash
-git clone https://github.com/thalesleall/analise-gastos-parlamentares.git
+git clone https://github.com/thalesleall/Analise-de-Gastos-Parlamentares.git
 cd analise-gastos-parlamentares
 ```
 
