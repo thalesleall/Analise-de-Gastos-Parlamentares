@@ -1,31 +1,20 @@
 # 📊 Análise de Gastos Parlamentares
 
-> Análise comparativa de gastos da Cota Parlamentar por Partido e Estado - Câmara dos Deputados
+> Sistema inteligente de análise de gastos da Câmara dos Deputados
 
 [![Python](https://img.shields.io/badge/Python-3.13-blue.svg)](https://www.python.org/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-## 📖 Sobre o Projeto
+## 📖 O Que Faz
 
-Sistema automatizado de análise de dados governamentais que cruza informações de despesas parlamentares (CSV) com dados cadastrais da API da Câmara dos Deputados, gerando análises estatísticas e visualizações sobre gastos por partido, estado e tipo de despesa.
+Analisa automaticamente os gastos parlamentares cruzando dados de despesas com informações da API da Câmara dos Deputados. Gera relatórios, gráficos e apresentação PowerPoint completa em poucos minutos.
 
-### 🎯 Objetivos
+### 🎯 Análises Incluídas
 
-- Identificar padrões de gastos por partido político
-- Comparar despesas entre estados brasileiros
-- Analisar tipos de despesas mais comuns
-- Rankear deputados com maiores gastos
-- Automatizar análise exploratória de dados governamentais
-
-## ✨ Funcionalidades
-
-- ✅ **Carregamento inteligente** de CSV com validação e limpeza de dados
-- ✅ **Integração com API** da Câmara dos Deputados
-- ✅ **Cruzamento de dados** via normalização de nomes (>95% taxa de identificação)
-- ✅ **Análises estatísticas** agregadas por múltiplas dimensões
-- ✅ **Visualizações profissionais** em alta resolução (300 DPI)
-- ✅ **Organização automática** de resultados por execução com timestamp
-- ✅ **Exportação completa** em CSV e PNG
+- 📊 Gastos por partido político
+- 🗺️ Gastos por estado (UF)
+- 💳 Principais tipos de despesa
+- 👥 Ranking dos deputados
+- 📈 Dashboard visual completo
 
 ## 🚀 Como Usar
 
@@ -61,42 +50,27 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 📥 Obtenha os Dados
+### 📥 Dados
 
-Baixe o CSV de despesas parlamentares em:
-- [Portal de Dados Abertos da Câmara](https://www.camara.leg.br/cota-parlamentar/)
+Baixe o CSV em: [Portal da Câmara](https://www.camara.leg.br/cota-parlamentar/)
+Salve na pasta `dados/` como `Ano-2025.csv`
 
-Salve o arquivo na pasta `dados/` com o nome `Ano-YYYY.csv` (exemplo: `Ano-2025.csv`)
-
-### ▶️ Execute a Análise
+### ▶️ Executar
 
 ```bash
 python src/main.py dados/Ano-2025.csv
 ```
 
-**Parâmetros opcionais:**
-```bash
-python src/main.py dados/Ano-2025.csv --output resultados
-```
+### 📊 Resultados (em `resultados/execucao_TIMESTAMP/`)
 
-**O que acontece automaticamente:**
-1. ✅ Carrega e limpa os dados do CSV
-2. ✅ Busca informações dos deputados na API
-3. ✅ Cruza e analisa os dados
-4. ✅ Salva 5 arquivos CSV com resultados
-5. ✅ Gera 5 gráficos profissionais (PNG 300 DPI)
-6. ✅ **Cria apresentação PowerPoint completa (15 slides)**
-
-### 📊 Resultados
-
-Os resultados são salvos automaticamente em `resultados/execucao_YYYYMMDD_HHMMSS/`:
-
-**5 arquivos CSV:**
-- `analise_completa.csv` - Dados completos do cruzamento
-- `gastos_por_partido.csv` - Agregação por partido
-- `gastos_por_estado.csv` - Agregação por estado (UF)
-- `gastos_por_tipo_despesa.csv` - Tipos de despesa principais
-- `top_deputados.csv` - Top 20 deputados com maiores gastos
+**5 CSVs + 5 Gráficos + 1 PowerPoint:**
+- `analise_completa.csv` - Dados completos
+- `gastos_por_partido.csv` - Por partido
+- `gastos_por_estado.csv` - Por estado
+- `gastos_por_tipo_despesa.csv` - Tipos de despesa
+- `top_deputados.csv` - Top 20 deputados
+- 5 gráficos PNG profissionais (300 DPI)
+- `Apresentacao_Completa.pptx` (15 slides)
 
 **5 gráficos PNG (300 DPI):**
 - `gastos_por_partido.png` - Gastos totais por partido
@@ -123,85 +97,37 @@ python gerar_apresentacao_completa.py
 # Usa automaticamente a execução mais recente
 ```
 
-## 📁 Estrutura do Projeto
+## 📁 Estrutura
 
 ```
-📦 analise-gastos-parlamentares/
-├── 📂 dados/                    # Arquivos CSV de entrada
-│   └── Ano-2025.csv
-├── 📂 src/                      # Código fonte
-│   ├── api_client.py           # Cliente API da Câmara
-│   ├── data_loader.py          # Carregamento e limpeza de dados
-│   ├── data_analyzer.py        # Análise e cruzamento de dados
-│   ├── visualizer.py           # Geração de gráficos
-│   └── main.py                 # Script principal
-├── 📂 resultados/               # Outputs organizados por execução
-│   ├── execucao_20251020_212403/
-│   │   ├── *.csv               # 5 arquivos de análise
-│   │   └── *.png               # 5 gráficos
-│   └── README.md
-├── 📄 COMO_FUNCIONA.md          # Documentação técnica resumida
-├── 📄 README.md                 # Este arquivo
-└── 📄 requirements.txt          # Dependências Python
+📦 projeto/
+├── 📂 dados/           # CSV de entrada
+├── 📂 src/             # Código Python (5 módulos)
+├── 📂 scripts/         # Script de apresentação
+├── 📂 resultados/      # Saídas por execução
+└── 📄 requirements.txt
 ```
 
-## 🛠️ Tecnologias Utilizadas
+## 🛠️ Tecnologias
 
-| Tecnologia | Versão | Uso |
-|------------|--------|-----|
-| Python | 3.13 | Linguagem base |
-| Pandas | 2.3.3 | Manipulação de dados |
-| NumPy | 2.3.4 | Operações numéricas |
-| Matplotlib | 3.10.7 | Visualizações base |
-| Seaborn | 0.13.2 | Visualizações avançadas |
-| Requests | 2.32.5 | Chamadas API REST |
-| Unidecode | 1.4.0 | Normalização de texto |
+- **Python 3.13** + Pandas + Matplotlib + Seaborn
+- **API:** Câmara dos Deputados (REST)
+- **Bibliotecas:** requests, unidecode, python-pptx
 
-## 📚 Fontes de Dados
+## 📚 Dados
 
-### 1. CSV de Despesas
-- **Fonte:** Portal de Dados Abertos da Câmara dos Deputados
-- **URL:** https://www.camara.leg.br/cota-parlamentar/
-- **Formato:** CSV com ~285.000 registros
-- **Campos principais:** txNomeParlamentar, vlrLiquido, txtDescricao
+- **CSV:** [Portal da Câmara](https://www.camara.leg.br/cota-parlamentar/) (~285k registros)
+- **API:** https://dadosabertos.camara.leg.br/api/v2/deputados
 
-### 2. API Cadastral
-- **Fonte:** API REST da Câmara dos Deputados
-- **URL:** https://dadosabertos.camara.leg.br/api/v2/deputados
-- **Formato:** JSON
-- **Dados:** nome, siglaPartido, siglaUf
+## 🎓 Equipe
 
-## 👥 Equipe
+**Grupo 1 - Ciência de Dados (2025)**
 
-- **Leticia Cristina Silva** - 21352
-- **Gabriel Davi Lopes Jacobini** - 24734
-- **Thales Vinicius Leal Barcelos** - 24740
-- **Maria Fernanda Leite Felicíssimo** - 24767
-
-**Disciplina:** Ciência de Dados - 2025
-
-## 📄 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
-## 🤝 Contribuições
-
-Contribuições são bem-vindas! Sinta-se à vontade para:
-
-1. Fazer um Fork do projeto
-2. Criar uma branch para sua feature (`git checkout -b feature/MinhaFeature`)
-3. Commit suas mudanças (`git commit -m 'Adiciona MinhaFeature'`)
-4. Push para a branch (`git push origin feature/MinhaFeature`)
-5. Abrir um Pull Request
-
-## 📞 Contato
-
-Para dúvidas ou sugestões, abra uma [Issue](https://github.com/thalesleall/analise-gastos-parlamentares/issues) no GitHub.
+- Leticia (21352)
+- Gabriel (24734)
+- Thales (24740)
+- Maria Fernanda (24767)
 
 ---
 
-<div align="center">
-  
-**Desenvolvido com 💙 para transparência dos dados públicos brasileiros**
-
-</div>
+� **Análise de Dados Governamentais - Câmara dos Deputados**
